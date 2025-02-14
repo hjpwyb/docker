@@ -20,10 +20,10 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.YM_GITHUB_TOKEN }}  # 使用自定义的 GitHub Token
+          username: ${{ github.actor }}  # 使用 GitHub 的用户名
+          password: ${{ secrets.YM_GITHUB_TOKEN }}  # 使用你添加到 Secrets 中的 token
 
-      - name: Pull Docker image (example)
+      - name: Pull Docker image
         run: |
           docker pull ghcr.io/hjpwyb/docker/whyour/qinglong:latest  # 用你实际的镜像路径替换
 
